@@ -25,6 +25,9 @@ import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 /**
  * Created by jocelyn on 3/12/15.
  */
@@ -68,6 +71,13 @@ public class ShowDinnerActivity extends Activity {
         Intent intent = new Intent(this, RemoveMealActivity.class);
         intent.putExtra(selectedDinnerExtrasKey, mDinner);
         startActivity(intent);
+
+        Tracker tracker = ((MyApplication) getApplication()).getTracker();
+        tracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Dinner Actions")
+                .setAction("Remove meal")
+                .setLabel(mDinner)
+                .build());
     }
 
     public void showRecipe (View view) {
