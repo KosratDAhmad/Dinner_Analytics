@@ -2,7 +2,7 @@
 <resources>
 
     <string name="ga_trackingId">UA-53878845-3</string>
-    <bool name="ga_autoActivityTracking">true</bool>
+    <bool name="ga_autoActivityTracking">false</bool>
 
     <screenName name="com.example.android.dinnerapp.MainActivity">
         Main screen

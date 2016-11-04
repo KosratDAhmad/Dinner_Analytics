@@ -24,15 +24,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
-public class MainActivity extends Activity
-        {
+
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         // TODO
         // Make sure that Analytics tracking has started
         ((MyApplication) getApplication()).startTracking();
@@ -82,6 +84,15 @@ public class MainActivity extends Activity
         startActivity(dinnerIntent);
 
         return dinnerChoice;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Tracker tracker = ((MyApplication) getApplication()).getTracker();
+        tracker.setScreenName("Main Activity");
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 }
 
