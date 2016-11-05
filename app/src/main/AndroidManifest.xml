@@ -32,6 +32,14 @@
                 android:value="com.example.android.dinnerapp.MainActivity" />
         </activity>
         <activity
+            android:name=".ShowAllDinnersActivity"
+            android:label=""
+            android:parentActivityName=".ShowAllDinnersActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.dinnerapp.MainActivity" />
+        </activity>
+        <activity
             android:name=".ShowRecipeActivity"
             android:label=""
             android:parentActivityName="com.example.android.dinnerapp.ShowRecipeActivity" >

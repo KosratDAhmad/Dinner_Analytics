@@ -40,6 +40,9 @@ public class MainActivity extends Activity {
         ((MyApplication) getApplication()).startTracking();
     }
 
+    public void showDinnerList(View view){
+        startActivity(new Intent(this, ShowAllDinnersActivity.class));
+    }
     /*
      * Show a pop up menu of food preferences.
      * Menu items are defined in menus/food_prefs_menu.xml
