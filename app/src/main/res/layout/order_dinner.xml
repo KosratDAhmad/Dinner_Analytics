@@ -34,10 +34,12 @@
             android:onClick="addDinnerToCart"
             />
 
-        <!--
+
         <Button style="@style/button_solid"
+            android:id="@+id/start_checkout_btn"
             android:text="Start checkout"
-            />
+            android:onClick="startCheckout"/>
+        <!--
         <Button style="@style/button_solid"
             android:text="Checkout step 2 \n\n Payment details"
             />
